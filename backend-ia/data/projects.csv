@@ -1,0 +1,12 @@
+id,nome,descricao,status,responsavel
+1,FinEduca,Plataforma de educação financeira,em andamento,Daniel
+2,HealthSync,Aplicativo para agendamento de consultas médicas,em desenvolvimento,Ana
+3,AgroTech,Monitoramento inteligente de lavouras,concluído,Carlos
+4,PetCareApp,Carteira digital de vacinação para pets,em planejamento,Bruna
+5,EcoMarket,Marketplace de produtos sustentáveis,em andamento,Felipe
+6,JobRadar,Plataforma de vagas com inteligência artificial,em testes,Marina
+7,AutoCheck,Sistema de inspeção veicular automatizada,em desenvolvimento,Ricardo
+8,FitLife,App de treinos e acompanhamento nutricional,concluído,Aline
+9,SmartCityMap,Mapeamento interativo de serviços urbanos,em testes,João
+10,LearnIt,Plataforma de microcursos gamificados,em planejamento,Renata
+11,SecureID,Solução de autenticação com biometria facial,em desenvolvimento,Lucas
