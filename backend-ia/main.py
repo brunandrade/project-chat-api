@@ -7,12 +7,21 @@ from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.schema import Document
 from langchain.prompts import PromptTemplate
+from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 
 app = FastAPI(
     title="project-chat-test-api",
     description="API que responde perguntas sobre projetos usando LangChain e embeddings.",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 df = pd.read_csv("./data/projects.csv")
@@ -69,4 +78,4 @@ class Question(BaseModel):
 @app.post("/api/v1/chat")
 def perguntar(pergunta: Question):
     resposta = chat.invoke(pergunta.pergunta)
-    return {"resposta": resposta["answer"]}
+    return {"resposta": resposta["answer"].strip()}
