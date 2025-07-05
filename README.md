@@ -1,4 +1,4 @@
-# 🧠 Assistente de Projetos com FastAPI + LangChain + LlamaCpp
+# 🧠 Assistente de Projetos com FastAPI + LangChain + LlamaCpp + Next.js
 
 Este projeto é um assistente inteligente que responde perguntas sobre projetos a partir de uma base `.csv`, usando modelos locais com `llama-cpp-python`, embeddings com HuggingFace e recuperação de contexto com LangChain.
 
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 > 💡 Se estiver usando `llama-cpp-python`, certifique-se que o CMake esteja instalado e configurado corretamente.
 
-## 📄 Estrutura do Projeto
+## 📄 Estrutura do Projeto backend
 
 ```
 backend-ia/
@@ -98,5 +98,59 @@ Se quiser rodar com Docker, veja o `dockerfile`:
 ```
 docker build -f backend-ia.dockerfile -t backend-ia .
 ```
+
+## 🖥️ Frontend (Next.js + React)
+
+### ✅ Pré-requisitos
+
+- **Node.js 18+**
+- **npm** (ou **yarn**)
+
+### 📦 Instalação e execução
+
+1. Acesse a pasta do frontend:
+
+```bash
+cd front/chat-project-ia
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+3. Execute o servidor de desenvolvimento:
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+A aplicação estará disponível em:
+📍 [http://localhost:3000](http://localhost:3000)
+
+### 📁 Estrutura do Frontend
+
+```
+front/chat-project-ia/
+├── src/
+│   ├── app/                # Páginas e layout principal (Next.js App Router)
+│   ├── components/
+│   │   ├── custom/         # Componentes customizados (home, input, mensagens, etc.)
+│   │   └── ui/             # Componentes de UI reutilizáveis (botão, input, card)
+│   ├── hooks/              # Hooks customizados (ex: useChatApi)
+│   ├── lib/                # Funções utilitárias
+│   └── types/              # Tipos TypeScript
+├── public/                 # Arquivos estáticos
+├── package.json            # Dependências e scripts
+```
+
+### 🔗 Integração com o Backend
+
+O frontend se comunica com a API FastAPI (backend) para enviar perguntas e receber respostas. Certifique-se de que o backend esteja rodando em [http://localhost:8000](http://localhost:8000) (ou ajuste a URL no frontend, se necessário).
 
 ---
